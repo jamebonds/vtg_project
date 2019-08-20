@@ -5,7 +5,7 @@ import os ,sys
 from datetime import datetime
 
 filePath = '/media/AIP/Cut-01.csv'
-pinSW = 6
+pinSW = 8
 cutDrive = 'sudo mount.cifs //PathCutting/data /media/AIP -o rw,uid=pi,password=eseuser'
 aipDrive = 'sudo mount.cifs //PathAIP/data /nedia/AIP -o rw,uid=pi,password=eseuser'
 fileReport = 'Reporting_'  +'-Job.xls'
