@@ -2,12 +2,17 @@ import csv
 #import NPi.GPIO as GPIO
 import time
 import os ,sys
+from datetime import datetime
 
-fileName  ='CUT'
+filePath = '/media/AIP/CuttingLength.csv'
 pinSW = 6
 cutDrive = 'sudo mount.cifs //PathCutting/data /media/AIP -o rw,uid=pi,password=eseuser'
 aipDrive = 'sudo mount.cifs //PathAIP/data /nedia/AIP -o rw,uid=pi,password=eseuser'
 fileReport = 'Reporting_'  +'-Job.xls'
+mt = 'MT'
+yd = 'YD'
+header =  [yd,mt]
+
 #GPIO.setmode(GPIO.BCM)
 #GPIO.setup(pinSW,GPIO.IN)
 
@@ -18,10 +23,14 @@ content = []
 
 def openFile():
     os.system(cutDrive)
+    now = datetime.now()  # current date and time
+    nowdate = now.strftime("%Y%m%d")
+    fileReport = 'Reporting_' + nowdate + '-Job.csv'
+
     while (os.path.ismount('/media/AIP') == False):
         os.system(cutDrive)
     try:
-        reader = csv.reader(open("csvfile.csv"), delimiter=";")
+        reader = csv.reader(open(fileReport), delimiter=";")
         for row in reader:
             content.append(row[22])
         num_list = len(content)
@@ -32,23 +41,28 @@ def openFile():
         print('ERROR :'+IOError)
     return dataValue
 
-def writeFile():
+def writeFile(value):
     os.system(aipDrive)
+    f = open('/media/AIP/CuttingLength.csv', "a")
+    f.write(value)
     while (os.path.ismount('/media/AIP') == False):
         os.system(cutDrive)
     try:
-        print('hello')
+        with open(filePath,'w',newline='') as csvfile :
+            writer = csv.DictWriter(csvfile,fieldnames=header)
+            writer.writeheader()
+            writer.writerow({yd:(value*1.0936133),mt:value})
     except IOError:
-        print('hello')
+        print('ERROR' +IOError)
+    f.close()
 
 
-
-
+## ------ MAIN ---------
 while True:
     inputSW = 0
     #inputSW = GPIO.input(pinSW)
     if(inputSW == 1):
-        print('hello World')
         time.sleep(1)
         valueCSV = openFile()
+        writeFile(valueCSV)
 
