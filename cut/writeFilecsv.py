@@ -7,6 +7,7 @@ if(os.path.ismount('/media/AIP') == True):
     print('!!!!')
 else :
     print('????')
+
 # with  open('csvtest.csv','w',newline='') as csvfile:
 #     header =  ['YD','MT']
 #     writer = csv.DictWriter(csvfile,fieldnames=header)
