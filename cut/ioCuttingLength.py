@@ -13,7 +13,7 @@ mt = 'MT'
 yd = 'YD'
 header =  [yd,mt]
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pinSW,GPIO.IN)
 
 reader = csv.reader(open("csvfile.csv"), delimiter=";")
