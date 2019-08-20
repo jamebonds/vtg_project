@@ -1,5 +1,5 @@
 import csv
-#import NPi.GPIO as GPIO
+import NPi.GPIO as GPIO
 import time
 import os ,sys
 from datetime import datetime
@@ -13,8 +13,8 @@ mt = 'MT'
 yd = 'YD'
 header =  [yd,mt]
 
-#GPIO.setmode(GPIO.BCM)
-#GPIO.setup(pinSW,GPIO.IN)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(pinSW,GPIO.IN)
 
 reader = csv.reader(open("csvfile.csv"), delimiter=";")
 included_cols = [22]
@@ -59,8 +59,8 @@ def writeFile(value):
 
 ## ------ MAIN ---------
 while True:
-    inputSW = 0
-    #inputSW = GPIO.input(pinSW)
+    # inputSW = 0
+    inputSW = GPIO.input(pinSW)
     if(inputSW == 1):
         time.sleep(1)
         valueCSV = openFile()
