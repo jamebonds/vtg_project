@@ -4,7 +4,7 @@ import time
 import os ,sys
 from datetime import datetime
 
-filePath = '/media/AIP/CuttingLength.csv'
+filePath = '/media/AIP/Cut-01.csv'
 pinSW = 6
 cutDrive = 'sudo mount.cifs //PathCutting/data /media/AIP -o rw,uid=pi,password=eseuser'
 aipDrive = 'sudo mount.cifs //PathAIP/data /nedia/AIP -o rw,uid=pi,password=eseuser'
