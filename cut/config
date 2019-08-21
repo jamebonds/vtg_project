@@ -1,0 +1,12 @@
+#   % (Parameter For Config)
+
+#install cifs
+sudo apt-get install cifs-utils
+
+#Raspi config auto mount /etc/fstab
+//%IP-Server/%Directory /%Directory/%Directory cifs auto,uid=%UID,password=%PASSWORD,x-systemd.automount 0 0
+
+#Nanopi config auto mount /etc/fstab
+//%IP-Server/%Directory /%Directory/%Directory cifs auto,uid=%UID,password=%PASSWORD
+
+
