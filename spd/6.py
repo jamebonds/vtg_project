@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 import os
 
 # name CSV FILE
-filename = 'SPD-05'
+filename = 'SPD-06'
 
 compensationMM = 43.81
 compensationYard = 0.0479111986
