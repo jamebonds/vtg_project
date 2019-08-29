@@ -88,7 +88,7 @@ while True :
                 yard = sumLenght*0.00109361 + compensationYard
                 #yardLog  = mm *0.00109361 
                 counter = 0
-                #print("I/O Cuting  : sumLenght (mm)",sumLog," sumLenght (yard)",yardLog)
+                print("I/O Cuting  : sumLenght (mm)",sumLog," sumLenght (yard)",yardLog)
                 datafram = pd.DataFrame({'YD': ['{0:.4f}'.format(yard)], 'MT': ['{0:.4f}'.format(sumLenght/1000)]})
                 writeFile(datafram)
                 os.system(osUnMount)
