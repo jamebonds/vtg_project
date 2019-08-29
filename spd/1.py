@@ -76,7 +76,7 @@ while True :
                 if(input_value != buffer and input_value == 1):
                         counter +=1
                         mm = (c/p)*counter
-                        #print("pulse ",counter , " mm " , mm)
+                        print("pulse ",counter , " mm " , mm)
                 buffer = input_value
             #elif(in2 == 1 and in3 == 1 and in5 == 1  and in6 == 1 and in7 == 1 and in8 == 0 and in8buffer == 1 and in9 == 1): # Cut Spreadin 2-6
             elif (in2 == 0 and in3 == 1 and in5 == 1 and in6 == 1 and in7 == 1 and in8 == 0 and in8buffer == 1 and in9 == 1):  # Cut Spreading 1
