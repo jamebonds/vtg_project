@@ -32,9 +32,9 @@ GPIO.setup(26, GPIO.IN)
 GPIO.setup(8,GPIO.IN)
 GPIO.setup(7,GPIO.IN)
 
-buffer = 0      # Buffer of pluse value
-counter = 0     # pluse counter
-closeJobBuffer = 0      # Last stage of close job
+buffer = 0
+counter = 0
+closeJobBuffer = 0
 sumLenght = 0
 sumLog = 0
 in4buffer = 0
