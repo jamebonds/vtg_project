@@ -68,7 +68,7 @@ while True :
         in9 = GPIO.input(26)
         in10 = GPIO.input(8)
         in11 = GPIO.input(7)
-        if (in11 ==0):
+        if (in11 ==1):
             if(in2 == 1 and in3 == 1 and in4 == 1 and in5 == 1 and in6 == 0 and in7 ==1 and in8 == 1 and in9 == 1): # Spreading with material
                 if(input_value != buffer and input_value == 1):
                         counter +=1
@@ -102,6 +102,6 @@ while True :
             closeJobBuffer = in10
             in4buffer = in4
             in8buffer = in8
-        elif (in11 ==1 and in2 == 0 and in5 == 1 and in6 == 1) :
+        elif (in11 ==0 and in2 == 0 and in5 == 1 and in6 == 1) :
             mm= 0
             sumLenght = 0
