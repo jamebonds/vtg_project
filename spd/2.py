@@ -105,3 +105,8 @@ while True :
         elif (in11 ==1 and in2 == 0 and in5 == 1 and in6 == 1) :
             mm= 0
             sumLenght = 0
+        elif (in10 == 0):
+            mm = 0
+            sumLenght = 0
+            datafram = pd.DataFrame({'YD':['0'],'MT':['0']})
+            writeFile(datafram)
